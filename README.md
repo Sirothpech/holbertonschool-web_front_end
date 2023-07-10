@@ -43,7 +43,7 @@ In this project, I completed a series of tasks that involved creating and modify
 
 - Change the <title> to: Article - Techium
 
-- Inside the <main> tags, after the text, create the <aside> tags with the text "Aside"
+- Inside the `main` tags, after the text, create the `aside` tags with the text "Aside"
 
 ## Task 5: Section
 
