@@ -81,7 +81,7 @@ a:active {
     color: var(--color-primary);
 }
 
-.section{
+.section {
     padding: var(--section-padding);
 }
 
@@ -96,6 +96,7 @@ a:active {
 
 .section-footer{
     padding: var(--section-footer-padding);
+    text-align: var(--section-footer-align);
 }
 
 .footer{
