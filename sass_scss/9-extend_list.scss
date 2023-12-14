@@ -1,0 +1,12 @@
+/* task 9 */
+%theme-shared {
+    font-size: 12px;
+}
+.success {
+    @extend %theme-shared;
+    color: #00FF00; }
+.warning {
+    @extend %theme-shared;
+    color: #FF0000; } 
+.info {
+        @extend %theme-shared; }
