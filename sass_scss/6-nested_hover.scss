@@ -1,8 +1,8 @@
 /* task 6 */
 $color-button: #FF0000;
 $color-hover: #00FF00;
-button {
+button{
     color: $color-button;
-    :hover {
+&:hover {
       color: $color-hover; }
-    }
+}
