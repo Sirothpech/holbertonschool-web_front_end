@@ -1,0 +1,9 @@
+/* task 5 */
+$txt-color1: #3D3D3D;
+$txt-color2: #FF0000;
+body {
+    color: $txt-color1;
+    >.red {
+        color: $txt-color2;
+    }
+}
