@@ -1,0 +1,8 @@
+/* task 6 */
+$color-button: #FF0000;
+$color-hover: #00FF00;
+button {
+    color: $color-button;
+    :hover {
+      color: $color-hover; }
+    }
