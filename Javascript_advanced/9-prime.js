@@ -1,28 +1,21 @@
 function countPrimeNumbers() {
-    // Fonction pour vérifier si un nombre est premier
-    function isPrime(num) {
-        for (let i = 2; i < num; i++) {
-            if (num % i === 0) {
-                return false;
+    let array = [];
+    for (let i = 2; i <= 100; i++) {
+        let flag = false;
+        for (let j = 2; j <= i; j++) {
+            if (i % j === 0 && i !== j) {
+                flag = true;
+                break;
             }
         }
-        return num > 1;
-    }
-
-    let count = 0;
-    const start = performance.now();
-    // Parcourir les nombres de 2 à 100 et compter les nombres premiers
-    for (let i = 2; i <= 100; i++) {
-        if (isPrime(i)) {
-            count++;
+        if (flag === false) {
+            array.push(i);
         }
     }
-
-    const end = performance.now();
-    const executionTime = end - start;
-
-    console.log(`Execution time of printing countPrimeNumbers was ${executionTime} milliseconds.`);
-    return count;
+    return array.length;
 }
-
+const start = performance.now();
 countPrimeNumbers();
+const end = performance.now();
+const executionTime = end - start;
+console.log(`Execution time of printing countPrimeNumbers was ${executionTime} milliseconds.`);
