@@ -21,7 +21,7 @@
         $('tr td').last().on("click",function() {
             $(this).parent().remove()
         })
-        $('tr td').last().css('background-color', 'orange')
+        $('tr td').last().css({'background-color' : 'orange', 'cursor' : 'pointer'})
     }
     createFamilyTree();
     addNewMember('Guillaume', 'Salva');
