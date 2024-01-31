@@ -18,20 +18,23 @@
     }    
 
     function addNewMember(firstName, lastName, position) {
-        var newRow = '<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>(x)</td></tr>';
-        
-        if (position === 'before') {
-            $('tbody').prepend(newRow);
-        } else {
-            $('tbody').append(newRow);
-        }
+    var newRow = '<tr><td>' + firstName + '</td><td>' + lastName + '</td><td>(x)</td></tr>';
 
+    if (position === 'before') {
+        $('tbody').prepend(newRow);
+        $('tr td:nth-of-type(3)').on("click", function () {
+            $(this).parent().remove();
+        });
+        $('td:nth-of-type(3)').css({'background-color': 'orange', 'cursor': 'pointer'});
+    } else {
+        $('tbody').append(newRow);
         $('tr td').last().on("click", function () {
             $(this).parent().remove();
         });
-
-        $('tr td').last().css({'background-color': 'orange', 'cursor': 'pointer'});
+        $('td').last().css({'background-color': 'orange', 'cursor': 'pointer'});
     }
+}
+
 
     function createForm() {
         $('table').before("<input type='text'> <input type='text'>")
