@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 7</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+</body>
+<script type="application/javascript">
+    function createSearchForm() {
+        $('body').append('<input type="text" placeholder="Search Wikipedia"></input>', '<input type="submit"></input>', '<ul></ul>')
+        $('input[type="submit"]').on('click', function () {
+            queryWikipedia($('input[type="text"]').val());
+        })
+    }
+
+    function addNewArticle(id, title, snippet) {
+            $('ul').append(
+                $('<li>').append(
+                    $('<p>').append(
+                        $('<span>').text(id + ' - '),
+                        $('<b>').text(title)
+                    ),
+                    $('<p>').html(snippet)
+                )
+            );
+        }
+
+    function queryWikipedia(search) {
+        var apiUrl = 'https://en.wikipedia.org/w/api.php';
+
+        var requestData = {
+            action: 'query',
+            format: 'json',
+            list: 'search',
+            srsearch: search,
+            origin: '*'
+        };
+        
+        $.ajax({
+            url: apiUrl,
+            data: requestData,
+            success: function(data) {
+                        data.query.search.forEach(function(article) {
+                            addNewArticle(article.pageid, article.title, article.snippet);
+                        });
+                    },
+            error: function(error) {
+                console.error('Erreur lors de la requête Wikipedia:', error);
+            }
+        });
+    }
+    createSearchForm();
+</script>
+
+</html>
